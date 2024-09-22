@@ -1,6 +1,3 @@
-# albasidae
-서울시립대학교 소프트웨어공학 팀프로젝트
-
 # Project Team Name 
 UOS Works
 
