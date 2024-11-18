@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>300</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ApiResponse&lt;T&gt;
+--
+result
+message
+data</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>550</y>
+      <w>660</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>GlobalExceptionalHandler
+--
+
+--
+handleIllegalArgumentException(ex:IllegalArgumentException):ResponseEntity&lt;ApiResponse&lt;Object&gt;&gt;
+handleGeneralException(ex: Exception):ResponseEntity&lt;ApiResponse&lt;Object&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>370</y>
+      <w>80</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;create&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>170</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Controller
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>190</y>
+      <w>80</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;create&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>

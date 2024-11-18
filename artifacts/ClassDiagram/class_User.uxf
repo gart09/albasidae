@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>80</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>UserRole
+--
+COMPANY
+ADMIN
+PERSONAL
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>200</y>
+      <w>168</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>UserDto
+--
+name
+phone
+email
+birthDate
+id
+gender
+businessNumber
+image
+role</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>200</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>UserEntity
+--
+name
+phone
+email
+birthDate
+id
+password
+gender
+businessNumber
+image
+role
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>408</y>
+      <w>328</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>UserRepository
+--
+
+--
+findByEmail
+existsByEmail
+findByNameAndPhoneAndRole
+findByNameAndPhoneAndRoleAndBusinessNumber
+findByEmailAndNameAndPhoneAndRole
+findByEmailAndNameAndPhoneAndRoleAndBusinessNumber
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>632</y>
+      <w>440</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>UserService
+--
+s3Service
+EMAIL_REGEX
+EMAIL_PATTERN
+userRepository
+passwordEncoder
+jwtTokenProvider
+--
+registerUser(userDto)
+authenticateUser(email, password, expectedRole)
+getUserByEmail(email)
+updateUserByEmail(email, userDto)
+deleteUserByEmail(email)
+findEmail(name, phone, role, businessNumber)
+resetPassword(email, name, phone, role, businessNumber, newPassword)
+uploadUserImage(email, image)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>408</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>JwtTokenProvider
+--
+secretKey
+validityInMilliseconds
+--
+init()
+createToken(username, role)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>680</y>
+      <w>384</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>UserController
+--
+s3Service
+--
+registerUser(userDto)
+loginUser(userDto)
+getUserByEmail(email)
+updateUserByEmail(email, userDto)
+deleteUserByEmail(email)
+findEmail(name, phone, role, businessNumber)
+resetPassword(email, name, phone, role, businessNumber, newPassword)
+uploadUserImage(email, image)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>136</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;80.0;180.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>136</y>
+      <w>184</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;40.0;210.0;40.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>256</y>
+      <w>56</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>344</y>
+      <w>24</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>488</y>
+      <w>24</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>528</y>
+      <w>128</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;280.0;10.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>776</y>
+      <w>96</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
